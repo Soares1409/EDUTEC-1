@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tema em Foco — Geonexus</title>
+  <meta name="description" content="Aprofunde-se em energia, meio ambiente, migrações, tecnologia, segurança e comércio internacional." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="tema">
+  <div class="light-overlay"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand-link" href="index.html">
+        <div class="brand-mark">G</div>
+        <div>
+          <p class="brand-name">Geonexus</p>
+          <p class="brand-tagline">Mesa Global de Geopolítica</p>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="analises.html" data-page="analises">Análises</a>
+        <a href="regioes.html" data-page="regioes">Regiões</a>
+        <a href="tema.html" data-page="tema">Tema</a>
+        <a href="quiz.html" data-page="quiz">Quiz</a>
+      </nav>
+    </header>
+
+    <section class="section" style="padding-top:1.5rem;">
+      <h1 class="hero-title" style="font-size:2.5rem;">Tema em Foco</h1>
+      <p class="hero-text" style="font-size:1rem;">Aprofunde-se em temas centrais que moldam o mundo atual.</p>
+
+      <div class="tema-layout">
+        <nav id="tema-nav" class="tema-nav"></nav>
+        <div class="tema-content">
+          <div id="tema-painel" class="glass tema-panel"></div>
+          <h3 class="tema-articles-title">Artigos relacionados</h3>
+          <div id="tema-artigos" class="grid grid-3" style="margin-top:1rem;"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="brand-mark">G</div>
+            <span>Geonexus</span>
+          </div>
+          <p class="lede">Pesquisa geopolítica institucional para as decisões que importam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="analises.html">Análises</a></li>
+            <li><a href="regioes.html">Regiões</a></li>
+            <li><a href="tema.html">Temas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Interativo</h4>
+          <ul>
+            <li><a href="quiz.html">Quiz geopolítico</a></li>
+            <li><a href="index.html#teorias">Teorias</a></li>
+            <li><a href="index.html#leituras">Leituras</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="index.html#sobre">Sobre nós</a></li>
+            <li><a href="index.html#newsletter">Briefing semanal</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Geonexus Research. Exclusivo para assinantes institucionais.</p>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const temaNav = document.getElementById("tema-nav");
+    const temaPainel = document.getElementById("tema-painel");
+    const temaArtigos = document.getElementById("tema-artigos");
+
+    let ativo = TEMAS[0].slug;
+
+    function renderTema() {
+      const tema = TEMAS.find((t) => t.slug === ativo) || TEMAS[0];
+
+      temaNav.innerHTML = TEMAS.map(
+        (t) => `
+        <button class="tab-btn ${t.slug === tema.slug ? "is-active" : ""}" data-slug="${t.slug}">
+          ${escapeHtml(t.nome)}
+        </button>`
+      ).join("");
+
+      temaPainel.innerHTML = `
+        <img src="${tema.imagem}" alt="${escapeHtml(tema.nome)}" loading="lazy" width="900" height="620" />
+        <div>
+          <h2>${escapeHtml(tema.nome)}</h2>
+          <p>${escapeHtml(tema.descricao)}</p>
+          <p>${escapeHtml(tema.detalhe)}</p>
+        </div>`;
+
+      temaArtigos.innerHTML = tema.artigos.map(articleMiniHTML).join("");
+
+      temaNav.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          ativo = btn.getAttribute("data-slug");
+          renderTema();
+        });
+      });
+    }
+
+    renderTema();
+  </script>
+</body>
+</html>

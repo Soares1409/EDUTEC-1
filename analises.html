@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Análises Geopolíticas — Geonexus</title>
+  <meta name="description" content="Discussões aprofundadas sobre eventos que moldam o cenário global: EUA e China, Oriente Médio, União Europeia, África e cibersegurança." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="analises">
+  <div class="light-overlay"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand-link" href="index.html">
+        <div class="brand-mark">G</div>
+        <div>
+          <p class="brand-name">Geonexus</p>
+          <p class="brand-tagline">Mesa Global de Geopolítica</p>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="analises.html" data-page="analises">Análises</a>
+        <a href="regioes.html" data-page="regioes">Regiões</a>
+        <a href="tema.html" data-page="tema">Tema</a>
+        <a href="quiz.html" data-page="quiz">Quiz</a>
+      </nav>
+    </header>
+
+    <section class="section" style="padding-top:1.5rem;">
+      <div class="filters-row">
+        <div>
+          <h1 class="hero-title" style="font-size:2.5rem;">Análises</h1>
+          <p class="hero-text" style="font-size:1rem;">Discussões aprofundadas sobre eventos que moldam o cenário global.</p>
+        </div>
+        <div class="filters-controls">
+          <input id="busca" type="search" class="field field--search" placeholder="Buscar análises..." />
+          <select id="ordem" class="field">
+            <option value="recentes">Mais recentes</option>
+            <option value="antigas">Mais antigas</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="lista" class="grid grid-3"></div>
+      <p id="vazio" class="empty-state" style="display:none;"></p>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="brand-mark">G</div>
+            <span>Geonexus</span>
+          </div>
+          <p class="lede">Pesquisa geopolítica institucional para as decisões que importam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="analises.html">Análises</a></li>
+            <li><a href="regioes.html">Regiões</a></li>
+            <li><a href="tema.html">Temas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Interativo</h4>
+          <ul>
+            <li><a href="quiz.html">Quiz geopolítico</a></li>
+            <li><a href="index.html#teorias">Teorias</a></li>
+            <li><a href="index.html#leituras">Leituras</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="index.html#sobre">Sobre nós</a></li>
+            <li><a href="index.html#newsletter">Briefing semanal</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Geonexus Research. Exclusivo para assinantes institucionais.</p>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const lista = document.getElementById("lista");
+    const vazio = document.getElementById("vazio");
+    const busca = document.getElementById("busca");
+    const ordem = document.getElementById("ordem");
+
+    function render() {
+      const termo = busca.value.trim().toLowerCase();
+      let filtradas = ANALISES.filter(
+        (a) =>
+          a.titulo.toLowerCase().includes(termo) ||
+          a.categoria.toLowerCase().includes(termo) ||
+          a.resumo.toLowerCase().includes(termo)
+      );
+      if (ordem.value === "antigas") filtradas = filtradas.slice().reverse();
+
+      lista.innerHTML = filtradas.map(articleCardHTML).join("");
+      vazio.style.display = filtradas.length === 0 ? "block" : "none";
+      vazio.textContent = `Nenhuma análise encontrada para “${busca.value}”.`;
+    }
+
+    busca.addEventListener("input", render);
+    ordem.addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>

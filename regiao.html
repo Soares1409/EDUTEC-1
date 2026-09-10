@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="page-title">Região — Geonexus</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="regioes">
+  <div class="light-overlay"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand-link" href="index.html">
+        <div class="brand-mark">G</div>
+        <div>
+          <p class="brand-name">Geonexus</p>
+          <p class="brand-tagline">Mesa Global de Geopolítica</p>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="analises.html" data-page="analises">Análises</a>
+        <a href="regioes.html" data-page="regioes">Regiões</a>
+        <a href="tema.html" data-page="tema">Tema</a>
+        <a href="quiz.html" data-page="quiz">Quiz</a>
+      </nav>
+    </header>
+
+    <section class="section" style="padding-top:1.5rem;">
+      <a href="regioes.html" class="back-link">← Voltar para regiões</a>
+
+      <div id="conteudo"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="brand-mark">G</div>
+            <span>Geonexus</span>
+          </div>
+          <p class="lede">Pesquisa geopolítica institucional para as decisões que importam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="analises.html">Análises</a></li>
+            <li><a href="regioes.html">Regiões</a></li>
+            <li><a href="tema.html">Temas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Interativo</h4>
+          <ul>
+            <li><a href="quiz.html">Quiz geopolítico</a></li>
+            <li><a href="index.html#teorias">Teorias</a></li>
+            <li><a href="index.html#leituras">Leituras</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="index.html#sobre">Sobre nós</a></li>
+            <li><a href="index.html#newsletter">Briefing semanal</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Geonexus Research. Exclusivo para assinantes institucionais.</p>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    const regiao = REGIOES.find((r) => r.slug === slug);
+    const conteudo = document.getElementById("conteudo");
+
+    if (!regiao) {
+      document.getElementById("page-title").textContent = "Região não encontrada — Geonexus";
+      conteudo.innerHTML = `
+        <div class="glass hero-card detail-hero" style="padding:3rem; text-align:center;">
+          <h1 style="font-family:var(--font-display); font-size:2rem;">Região não encontrada</h1>
+          <p class="hero-text" style="margin:1rem auto;">A região que você procura não existe ou foi movida.</p>
+          <a href="regioes.html" class="btn btn-primary mt-lg">Voltar para regiões</a>
+        </div>`;
+    } else {
+      document.getElementById("page-title").textContent = `${regiao.nome} — Geonexus`;
+
+      const stats = [
+        { label: "Países", valor: regiao.paises },
+        { label: "População", valor: regiao.populacao },
+        { label: "PIB", valor: regiao.pib },
+        { label: "Bloco", valor: regiao.bloco },
+      ];
+
+      conteudo.innerHTML = `
+        <div class="glass hero-card detail-hero">
+          <img src="${HERO_IMAGE_REGIAO}" alt="" loading="lazy" width="1600" height="900" style="opacity:0.3;" />
+          <div class="hero-content">
+            <div>
+              <h1>${escapeHtml(regiao.nome)}</h1>
+              <p class="descricao">${escapeHtml(regiao.descricao)}</p>
+            </div>
+            <div class="stats-mini">
+              ${stats
+                .map(
+                  (s) => `
+                <div class="stat-mini">
+                  <p class="label">${escapeHtml(s.label)}</p>
+                  <p class="value">${escapeHtml(s.valor)}</p>
+                </div>`
+                )
+                .join("")}
+            </div>
+          </div>
+        </div>
+
+        <h2 class="subsection-title">Destaques geopolíticos</h2>
+        <div class="grid grid-4 mt-lg">
+          ${regiao.destaques.map(highlightCardHTML).join("")}
+        </div>`;
+    }
+  </script>
+</body>
+</html>

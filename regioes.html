@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Regiões do Mundo — Geonexus</title>
+  <meta name="description" content="Explore as dinâmicas geopolíticas de Europa, Ásia, África, Oceania, América Latina e América do Norte." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="regioes">
+  <div class="light-overlay"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand-link" href="index.html">
+        <div class="brand-mark">G</div>
+        <div>
+          <p class="brand-name">Geonexus</p>
+          <p class="brand-tagline">Mesa Global de Geopolítica</p>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="analises.html" data-page="analises">Análises</a>
+        <a href="regioes.html" data-page="regioes">Regiões</a>
+        <a href="tema.html" data-page="tema">Tema</a>
+        <a href="quiz.html" data-page="quiz">Quiz</a>
+      </nav>
+    </header>
+
+    <section class="hero" style="padding-top:1.5rem;">
+      <div class="glass hero-card hero-card--muted">
+        <img src="assets/imagensRegiao/hero-world.jpg" alt="Mapa-múndi em linhas luminosas" loading="lazy" width="1600" height="900" />
+        <div class="hero-content">
+          <h1 class="hero-title" style="font-size:2.5rem; color:var(--cyan);">Regiões</h1>
+          <p class="hero-text">Explore as dinâmicas geopolíticas das principais regiões do mundo.</p>
+        </div>
+      </div>
+
+      <div id="lista-regioes" class="grid grid-3" style="margin-top:2rem;"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="brand-mark">G</div>
+            <span>Geonexus</span>
+          </div>
+          <p class="lede">Pesquisa geopolítica institucional para as decisões que importam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="analises.html">Análises</a></li>
+            <li><a href="regioes.html">Regiões</a></li>
+            <li><a href="tema.html">Temas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Interativo</h4>
+          <ul>
+            <li><a href="quiz.html">Quiz geopolítico</a></li>
+            <li><a href="index.html#teorias">Teorias</a></li>
+            <li><a href="index.html#leituras">Leituras</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="index.html#sobre">Sobre nós</a></li>
+            <li><a href="index.html#newsletter">Briefing semanal</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Geonexus Research. Exclusivo para assinantes institucionais.</p>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("lista-regioes").innerHTML = REGIOES.map(regionCardHTML).join("");
+  </script>
+</body>
+</html>

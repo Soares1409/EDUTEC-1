@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geonexus — Inteligência Geopolítica para Empresas</title>
+  <meta name="description" content="Análises geopolíticas regionais, temas em foco, teorias clássicas, leituras recomendadas e um quiz para testar seus conhecimentos." />
+  <link rel="icon" href="assets/imagensHome/hero-world.jpg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="home">
+  <div class="light-overlay"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand-link" href="index.html">
+        <div class="brand-mark">G</div>
+        <div>
+          <p class="brand-name">Geonexus</p>
+          <p class="brand-tagline">Mesa Global de Geopolítica</p>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="analises.html" data-page="analises">Análises</a>
+        <a href="regioes.html" data-page="regioes">Regiões</a>
+        <a href="tema.html" data-page="tema">Tema</a>
+        <a href="quiz.html" data-page="quiz">Quiz</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="glass hero-card">
+        <img src="assets/imagensHome/hero-world.jpg" alt="Mapa-múndi em linhas luminosas" width="1600" height="900" />
+        <div class="hero-content">
+          <span class="badge">Mesa Global</span>
+          <h1 class="hero-title">O mundo em movimento</h1>
+          <p class="hero-text">
+            Análises, mapas e indicadores para entender as forças que redesenham o
+            tabuleiro global — e o que elas significam para quem decide.
+          </p>
+          <a href="analises.html" class="btn btn-primary mt-lg">Explorar análises</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que é geopolítica -->
+    <section class="section">
+      <h2 class="section-title section-title--accent">Geopolítica</h2>
+      <p class="section-lede">
+        O estudo de fatores geográficos, econômicos e culturais sobre a política
+        internacional. Entender esses vetores é entender por que alianças se
+        formam, rotas mudam e crises se repetem em lugares específicos.
+      </p>
+      <div id="pilares" class="grid grid-3 mt-lg"></div>
+    </section>
+
+    <!-- Análises em destaque -->
+    <section class="section">
+      <div class="section-head-row">
+        <div>
+          <h2 class="section-title">Análises em destaque</h2>
+          <p>Os textos mais lidos das mesas regionais.</p>
+        </div>
+        <a href="analises.html" class="link-accent hidden-sm">Ver todas →</a>
+      </div>
+      <div id="destaques" class="grid grid-3"></div>
+    </section>
+
+    <!-- Teorias / Leituras -->
+    <section id="teorias" class="section">
+      <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+        <button id="tab-teorias" class="tab-btn is-active">Teorias Geopolíticas</button>
+        <button id="tab-leituras" class="tab-btn">Leituras Recomendadas</button>
+      </div>
+      <div id="painel-teorias" class="grid grid-3 mt-lg"></div>
+      <div id="painel-leituras" class="grid grid-2 mt-lg" style="display:none;"></div>
+    </section>
+
+    <!-- Sobre nós -->
+    <section id="sobre" class="section">
+      <h2 class="section-title">Sobre nós</h2>
+      <p class="section-lede">
+        Uma mesa editorial dedicada a traduzir movimentos geopolíticos em leitura
+        útil para empresas, analistas e estudantes.
+      </p>
+      <div id="equipe" class="grid grid-5 mt-lg"></div>
+    </section>
+
+    <!-- Indicadores -->
+    <section id="indicadores" class="section">
+      <h2 class="section-title" style="margin-bottom:1.5rem;">Indicadores Geopolíticos</h2>
+      <div class="grid grid-4">
+        <div class="glass stat-card">
+          <p class="label">Índice de Risco Global</p>
+          <p class="value value--accent">7,2</p>
+          <p class="delta delta--up">▲ 0,4 vs. último trimestre</p>
+        </div>
+        <div class="glass stat-card">
+          <p class="label">Tensão Comercial</p>
+          <p class="value">61</p>
+          <p class="delta">de 100 · Elevada</p>
+        </div>
+        <div class="glass stat-card">
+          <p class="label">Volatilidade Energética</p>
+          <p class="value">34,8</p>
+          <p class="delta delta--up">▲ 2,1 este mês</p>
+        </div>
+        <div class="glass stat-card">
+          <p class="label">Exposição Fiscal</p>
+          <p class="value">18,4%</p>
+          <p class="delta">do PIB · Em alta</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="section">
+      <div class="glass newsletter">
+        <div class="newsletter-inner">
+          <div>
+            <p class="newsletter-eyebrow">O Dispatch</p>
+            <h2>Inteligência semanal, antes de os mercados se moverem.</h2>
+            <p class="desc">
+              Um briefing conciso sobre movimentos regionais e indicadores — feito
+              para estrategistas e analistas corporativos.
+            </p>
+          </div>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="trabalho@empresa.com" class="field" required />
+            <button type="submit" class="btn btn-primary">Receber o briefing</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="brand-mark">G</div>
+            <span>Geonexus</span>
+          </div>
+          <p class="lede">Pesquisa geopolítica institucional para as decisões que importam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="analises.html">Análises</a></li>
+            <li><a href="regioes.html">Regiões</a></li>
+            <li><a href="tema.html">Temas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Interativo</h4>
+          <ul>
+            <li><a href="quiz.html">Quiz geopolítico</a></li>
+            <li><a href="index.html#teorias">Teorias</a></li>
+            <li><a href="index.html#leituras">Leituras</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="index.html#sobre">Sobre nós</a></li>
+            <li><a href="index.html#newsletter">Briefing semanal</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Geonexus Research. Exclusivo para assinantes institucionais.</p>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const PILARES = [
+      { titulo: "Poder e influência", texto: "Estados, empresas e organismos multilaterais competem por influência sobre territórios, rotas e recursos estratégicos." },
+      { titulo: "Recursos e território", texto: "O petróleo, os minerais críticos, a água e os alimentos definem quem sustenta a própria economia e quem depende de terceiros." },
+      { titulo: "Ideologia e narrativa", texto: "Sistemas políticos e valores culturais moldam alianças, blocos e a forma como cada conflito é lido pelo mundo." },
+    ];
+
+    document.getElementById("pilares").innerHTML = PILARES.map(pilarCardHTML).join("");
+
+    const destaques = ANALISES.slice(0, 3);
+    document.getElementById("destaques").innerHTML = destaques.map(articleCardHTML).join("");
+
+    document.getElementById("painel-teorias").innerHTML = TEORIAS.map(pilarCardHTML).join("");
+    document.getElementById("painel-leituras").innerHTML = LEITURAS.map(readingCardHTML).join("");
+
+    document.getElementById("equipe").innerHTML = EQUIPE.map(teamCardHTML).join("");
+
+    const tabTeorias = document.getElementById("tab-teorias");
+    const tabLeituras = document.getElementById("tab-leituras");
+    const painelTeorias = document.getElementById("painel-teorias");
+    const painelLeituras = document.getElementById("painel-leituras");
+
+    tabTeorias.addEventListener("click", () => {
+      tabTeorias.classList.add("is-active");
+      tabLeituras.classList.remove("is-active");
+      painelTeorias.style.display = "grid";
+      painelLeituras.style.display = "none";
+    });
+
+    tabLeituras.addEventListener("click", () => {
+      tabLeituras.classList.add("is-active");
+      tabTeorias.classList.remove("is-active");
+      painelLeituras.style.display = "grid";
+      painelTeorias.style.display = "none";
+    });
+  </script>
+</body>
+</html>
