@@ -172,11 +172,11 @@ const TEMAS = [
       "O controle e o acesso a recursos naturais, especialmente energia, são fatores determinantes nas relações internacionais.",
     detalhe:
       "Do petróleo ao lítio, os recursos movimentam economias, alianças e conflitos. Quem domina a extração, o refino e as rotas de transporte define boa parte do equilíbrio de poder global.",
-    imagem: "assets/imagensTemas/tema-energia.jpg",
+    imagem: "assets/imagensTemas/tema-petroleo.png",
     artigos: [
-      { titulo: "Energia Global", resumo: "Últimas nucleares viram ao centro do debate energético.", data: "14 de maio de 2024" },
-      { titulo: "Transição Energética", resumo: "O futuro das energias renováveis e a corrida por minerais críticos.", data: "11 de maio de 2024" },
-      { titulo: "Minerais Estratégicos", resumo: "Lítio: o novo petróleo do século XXI.", data: "07 de maio de 2024" },
+      { titulo: "Energia Global", resumo: "Últimas nucleares viram ao centro do debate energético.", data: "14 de maio de 2024", imagem: "assets/imagensTemas/tema-usina-nuclear.png" },
+      { titulo: "Transição Energética", resumo: "O futuro das energias renováveis e a corrida por minerais críticos.", data: "11 de maio de 2024", imagem: "assets/imagens2/transicao-energetica.png" },
+      { titulo: "Minerais Estratégicos", resumo: "Lítio: o novo petróleo do século XXI.", data: "07 de maio de 2024", imagem: "assets/imagensTemas/tema-minerais.png" },
     ],
   },
   {
@@ -186,7 +186,7 @@ const TEMAS = [
       "A crise climática deixou de ser pauta ambiental e virou fator central de segurança e economia.",
     detalhe:
       "Secas, enchentes e perda de solo produtivo redesenham fluxos migratórios e provocam disputas por água entre países vizinhos.",
-    imagem: "assets/imagensTemas/tema-energia.jpg",
+    imagem: "assets/imagens2/meio-ambiente.png",
     artigos: [
       { titulo: "Água como Ativo", resumo: "Bacias compartilhadas viram ponto de tensão diplomática.", data: "13 de maio de 2024" },
       { titulo: "Amazônia e Soberania", resumo: "Pressão internacional e o debate sobre governança da floresta.", data: "09 de maio de 2024" },
@@ -200,7 +200,7 @@ const TEMAS = [
       "Deslocamentos humanos em massa transformam a política interna de países receptores.",
     detalhe:
       "Conflitos, colapso econômico e eventos climáticos empurram milhões de pessoas por ano, pressionando fronteiras e alimentando disputas eleitorais.",
-    imagem: "assets/imagensTemas/tema-energia.jpg",
+    imagem: "assets/imagens2/migracoes-globais.png",
     artigos: [
       { titulo: "Rotas do Mediterrâneo", resumo: "Como a Europa reformulou sua política de fronteiras.", data: "12 de maio de 2024" },
       { titulo: "Deslocados Climáticos", resumo: "A categoria que ainda não existe no direito internacional.", data: "08 de maio de 2024" },
@@ -214,7 +214,7 @@ const TEMAS = [
       "Semicondutores, inteligência artificial e infraestrutura digital são o novo território de disputa.",
     detalhe:
       "O controle sobre chips avançados e cabos submarinos define quem consegue projetar poder econômico e militar na próxima década.",
-    imagem: "assets/imagensTemas/tema-energia.jpg",
+    imagem: "assets/imagens2/tecnologia-e-inovacao.png",
     artigos: [
       { titulo: "Guerra dos Chips", resumo: "Restrições de exportação reescrevem a cadeia produtiva.", data: "14 de maio de 2024" },
       { titulo: "IA e Regulação", resumo: "Blocos disputam o padrão global de governança.", data: "10 de maio de 2024" },
@@ -228,7 +228,7 @@ const TEMAS = [
       "Ameaças assimétricas exigem novas doutrinas de defesa e cooperação entre Estados.",
     detalhe:
       "Grupos não estatais, milícias e redes transnacionais operam em zonas de vácuo institucional e afetam rotas comerciais inteiras.",
-    imagem: "assets/imagensTemas/tema-energia.jpg",
+    imagem: "assets/imagens2/terrorismo-e-seguranca.png",
     artigos: [
       { titulo: "Sahel em Crise", resumo: "O avanço de grupos armados e a retirada ocidental.", data: "13 de maio de 2024" },
       { titulo: "Pirataria Marítima", resumo: "O custo do risco no frete internacional.", data: "09 de maio de 2024" },
@@ -242,7 +242,7 @@ const TEMAS = [
       "Tarifas, sanções e acordos regionais moldam o fluxo de bens entre continentes.",
     detalhe:
       "A fragmentação do comércio global em blocos rivais eleva custos e obriga empresas a redesenhar suas cadeias de suprimento.",
-    imagem: "assets/imagensTemas/tema-energia.jpg",
+    imagem: "assets/imagens2/comercio-internacional.png",
     artigos: [
       { titulo: "Nearshoring", resumo: "Empresas aproximam a produção dos mercados consumidores.", data: "12 de maio de 2024" },
       { titulo: "Sanções Econômicas", resumo: "Eficácia e efeitos colaterais de um instrumento em alta.", data: "07 de maio de 2024" },
@@ -270,19 +270,19 @@ const TEORIAS = [
 ];
 
 const LEITURAS = [
-  { titulo: "A Nova Geopolítica", autor: "Antologia contemporânea", nota: "Panorama das disputas do século XXI." },
-  { titulo: "Geopolítica", autor: "Introdução clássica", nota: "Conceitos fundamentais em linguagem direta." },
-  { titulo: "Novas Geopolíticas", autor: "Ensaios reunidos", nota: "Território, tecnologia e poder." },
-  { titulo: "À Beira do Abismo", autor: "Análise de conflitos", nota: "Crises recentes e seus desdobramentos." },
-  { titulo: "Política, Ideologia e Conspirações", autor: "Estudo crítico", nota: "Narrativas e disputa de poder." },
+  { titulo: "A Nova Geopolítica", autor: "Antologia contemporânea", nota: "Panorama das disputas do século XXI.", icone: "assets/imagensLeituras/nova-geopolitica.png" },
+  { titulo: "Geopolítica", autor: "Introdução clássica", nota: "Conceitos fundamentais em linguagem direta.", icone: "assets/imagensLeituras/geopolitica.png" },
+  { titulo: "Novas Geopolíticas", autor: "Ensaios reunidos", nota: "Território, tecnologia e poder.", icone: "assets/imagensLeituras/novas-geopoliticas.png" },
+  { titulo: "À Beira do Abismo", autor: "Análise de conflitos", nota: "Crises recentes e seus desdobramentos.", icone: "assets/imagensLeituras/beira-do-abismo.png" },
+  { titulo: "Política, Ideologia e Conspirações", autor: "Estudo crítico", nota: "Narrativas e disputa de poder.", icone: "assets/imagensLeituras/politica-ideologia.png" },
 ];
 
 const EQUIPE = [
-  { nome: "Helena Vasquez", papel: "Editora-chefe" },
-  { nome: "M. Okafor", papel: "Análise global" },
-  { nome: "Rafael Lima", papel: "Energia e recursos" },
-  { nome: "Ana Sousa", papel: "Ásia-Pacífico" },
-  { nome: "Diego Torres", papel: "América Latina" },
+  { nome: "Gustavo Martins", papel: "Criador da Home", foto: "assets/imagensEquipe/gustavo-martins.jpg" },
+  { nome: "Igor dos Reis", papel: "Criador do Análises", foto: "assets/imagensEquipe/igor-dos-reis.jpg" },
+  { nome: "Guilherme Borges", papel: "Criador do Regiões", foto: "assets/imagensEquipe/guilherme-borges.jpg" },
+  { nome: "Rodolfo Soares", papel: "Criador do Tema", foto: "assets/imagensEquipe/rodolfo-soares.jpg" },
+  { nome: "Henrique Almeida", papel: "Criador do Jogo", foto: "assets/imagensEquipe/henrique-almeida.jpg" },
 ];
 
 const QUIZ = [

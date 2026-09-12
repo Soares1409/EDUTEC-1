@@ -65,18 +65,24 @@ function pilarCardHTML(p) {
 }
 
 function teamCardHTML(p) {
+  const avatarInner = p.foto
+    ? `<img src="${escapeHtml(p.foto)}" alt="${escapeHtml(p.nome)}" loading="lazy" />`
+    : escapeHtml(initialsOf(p.nome));
   return `
     <div class="glass team-card">
-      <div class="avatar">${escapeHtml(initialsOf(p.nome))}</div>
+      <div class="avatar${p.foto ? " avatar--photo" : ""}">${avatarInner}</div>
       <p class="name">${escapeHtml(p.nome)}</p>
       <p class="role">${escapeHtml(p.papel)}</p>
     </div>`;
 }
 
 function readingCardHTML(l) {
+  const avatarInner = l.icone
+    ? `<img src="${escapeHtml(l.icone)}" alt="" loading="lazy" />`
+    : escapeHtml(l.titulo.charAt(0));
   return `
     <div class="glass reading-card">
-      <div class="avatar">${escapeHtml(l.titulo.charAt(0))}</div>
+      <div class="avatar${l.icone ? " avatar--icon" : ""}">${avatarInner}</div>
       <div>
         <p class="title">${escapeHtml(l.titulo)}</p>
         <p class="author">${escapeHtml(l.autor)}</p>
@@ -94,8 +100,12 @@ function highlightCardHTML(d) {
 }
 
 function articleMiniHTML(a) {
+  const foto = a.imagem
+    ? `<img src="${escapeHtml(a.imagem)}" alt="" loading="lazy" />`
+    : "";
   return `
     <article class="glass article-mini">
+      ${foto}
       <p class="title">${escapeHtml(a.titulo)}</p>
       <p class="summary">${escapeHtml(a.resumo)}</p>
       <p class="date">${escapeHtml(a.data)}</p>
