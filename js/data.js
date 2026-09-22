@@ -285,38 +285,5 @@ const EQUIPE = [
   { nome: "Henrique Almeida", papel: "Criador do Jogo", foto: "assets/imagensEquipe/henrique-almeida.jpg" },
 ];
 
-const QUIZ = [
-  {
-    pergunta: "Qual estreito concentra a maior parte do petróleo exportado do Golfo Pérsico?",
-    opcoes: ["Estreito de Malaca", "Estreito de Ormuz", "Canal de Suez", "Estreito de Bering"],
-    correta: 1,
-    explicacao: "Cerca de um quinto do petróleo consumido no mundo passa pelo Estreito de Ormuz.",
-  },
-  {
-    pergunta: "Qual teoria afirma que controlar a Eurásia central é controlar o mundo?",
-    opcoes: ["Rimland", "Poder Marítimo", "Heartland", "Destino Manifesto"],
-    correta: 2,
-    explicacao: "A Teoria do Heartland foi formulada por Halford Mackinder em 1904.",
-  },
-  {
-    pergunta: "Qual país lidera a produção mundial de cobalto?",
-    opcoes: ["Chile", "Austrália", "Indonésia", "República Democrática do Congo"],
-    correta: 3,
-    explicacao: "O Congo responde por mais de 70% da produção global de cobalto.",
-  },
-  {
-    pergunta: "Qual bloco reúne Brasil, Argentina, Paraguai e Uruguai?",
-    opcoes: ["Mercosul", "CELAC", "Aliança do Pacífico", "USMCA"],
-    correta: 0,
-    explicacao: "O Mercosul foi criado pelo Tratado de Assunção em 1991.",
-  },
-  {
-    pergunta: "Qual região é chamada de 'triângulo do lítio'?",
-    opcoes: ["Ásia Central", "Argentina, Bolívia e Chile", "Escandinávia", "África Austral"],
-    correta: 1,
-    explicacao: "O triângulo concentra mais da metade das reservas conhecidas de lítio do planeta.",
-  },
-];
-
 const HERO_IMAGE_HOME = "assets/imagensHome/hero-world.jpg";
 const HERO_IMAGE_REGIAO = "assets/imagensRegiao/hero-world.jpg";

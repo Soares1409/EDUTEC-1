@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GEONEXUS: GLOBAL CRISIS</title>
+  <meta name="description" content="Assuma as decisões estratégicas de um país durante uma sequência de crises geopolíticas e enfrente as consequências das suas escolhas." />
+  <link rel="icon" href="../assets/imagensHome/hero-world.jpg" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="jogo">
+  <div class="light-overlay"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand-link" href="../index.html">
+        <div class="brand-mark">G</div>
+        <div>
+          <p class="brand-name">Geonexus</p>
+          <p class="brand-tagline">Mesa Global de Geopolítica</p>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html" data-page="home">Home</a>
+        <a href="../analises.html" data-page="analises">Análises</a>
+        <a href="../regioes.html" data-page="regioes">Regiões</a>
+        <a href="../tema.html" data-page="tema">Tema</a>
+        <a href="index.html" data-page="jogo">Jogo</a>
+      </nav>
+    </header>
+
+    <!-- ============ TELA 1 — INÍCIO ============ -->
+    <section id="screen-start" class="screen active">
+      <section class="hero">
+        <div class="glass hero-card">
+          <img src="../assets/imagensHome/hero-world.jpg" alt="Mapa-múndi em linhas luminosas" width="1600" height="900" />
+          <div class="hero-content">
+            <span class="badge">Simulação Geopolítica</span>
+            <h1 class="hero-title">GEONEXUS: GLOBAL CRISIS</h1>
+            <p class="hero-text">"Uma crise pode mudar o equilíbrio do mundo." Assuma o comando de um país e conduza-o através de uma sequência de decisões que vão redesenhar seu lugar no tabuleiro global.</p>
+            <button id="btn-start" class="btn btn-primary mt-lg">Iniciar Crise</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title section-title--accent">Como jogar</h2>
+        <p class="section-lede">
+          A cada turno, uma crise exige uma decisão. Não existe resposta certa — apenas
+          consequências que se acumulam ao longo de anos de governo.
+        </p>
+        <div id="feature-grid" class="grid grid-4 mt-lg"></div>
+      </section>
+    </section>
+
+    <!-- ============ TELA 2 — ESCOLHA DO PAÍS ============ -->
+    <section id="screen-country" class="screen">
+      <section class="section" style="padding-top:1.5rem;">
+        <h1 class="hero-title" style="font-size:2.25rem;">Escolha seu país</h1>
+        <p class="hero-text" style="font-size:1rem;">
+          Cada nação parte de uma condição diferente. Suas decisões definirão o rumo dos próximos anos.
+        </p>
+        <div id="country-grid" class="grid grid-3 mt-lg"></div>
+        <p class="text-center mt-lg">
+          <button id="btn-back-to-start" class="btn btn-ghost">← Voltar</button>
+        </p>
+      </section>
+    </section>
+
+    <!-- ============ TELA 3 — PAINEL DO JOGO ============ -->
+    <section id="screen-game" class="screen">
+      <section class="section" style="padding-top:1.5rem;">
+        <div class="section-head-row">
+          <div>
+            <h1 class="hero-title" style="font-size:1.9rem;">GEONEXUS: GLOBAL CRISIS</h1>
+            <p>Painel estratégico — cada decisão molda o país nos próximos anos.</p>
+          </div>
+          <button id="btn-restart-ingame" class="btn btn-ghost btn-small">Reiniciar crise</button>
+        </div>
+
+        <div class="stats-mini game-hud mt-lg">
+          <div class="stat-mini">
+            <p class="label">Ano</p>
+            <p class="value" id="hud-year">2026</p>
+          </div>
+          <div class="stat-mini">
+            <p class="label">Turno</p>
+            <p class="value" id="hud-turn">1 / 16</p>
+          </div>
+          <div class="stat-mini">
+            <p class="label">País</p>
+            <p class="value" id="hud-country">—</p>
+          </div>
+          <div class="stat-mini">
+            <p class="label">Estabilidade</p>
+            <p class="value value--accent" id="hud-stability">—</p>
+          </div>
+        </div>
+
+        <div class="game-layout mt-lg">
+          <div id="event-panel" class="game-main"></div>
+
+          <aside class="game-sidebar">
+            <div class="glass card">
+              <h3>Indicadores Nacionais</h3>
+              <div id="indicators-grid" class="indicator-grid"></div>
+            </div>
+
+            <div class="glass card map-panel">
+              <h3>Cenário Internacional</h3>
+              <div class="map-frame">
+                <img src="../assets/imagensHome/hero-world.jpg" alt="Mapa-múndi estilizado" />
+                <div id="map-nodes"></div>
+              </div>
+              <div id="map-info" class="map-info"></div>
+            </div>
+
+            <div class="glass card">
+              <h3>Histórico Recente</h3>
+              <ul id="history-list" class="report-list"></ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============ TELA 4 — RELATÓRIO FINAL ============ -->
+    <section id="screen-final" class="screen">
+      <section class="section" style="padding-top:1.5rem;">
+        <div class="glass result-card">
+          <p class="eyebrow-label text-center">Crise Encerrada</p>
+          <h2 class="hero-title text-center" style="font-size:2rem;" id="final-country">—</h2>
+          <p class="text-center" id="final-year" style="color:var(--ink-muted);">—</p>
+
+          <div id="final-stats-grid" class="grid grid-3 mt-lg"></div>
+
+          <div class="result-meta mt-lg">
+            <div class="glass stat-card">
+              <p class="label">Decisões tomadas</p>
+              <p class="value value--accent" id="final-decisions">0</p>
+            </div>
+            <div class="glass stat-card">
+              <p class="label">Crises enfrentadas</p>
+              <p class="value value--accent" id="final-crises">0</p>
+            </div>
+          </div>
+
+          <p class="hero-text text-center mt-lg" id="final-narrative"></p>
+
+          <div class="result-actions mt-lg">
+            <button id="btn-restart-final" class="btn btn-primary">Jogar novamente</button>
+            <a href="../index.html" class="btn btn-ghost">Voltar ao portal</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============ TELA 5 — COLAPSO ESTRATÉGICO ============ -->
+    <section id="screen-gameover" class="screen">
+      <section class="section" style="padding-top:1.5rem;">
+        <div class="glass result-card result-card--danger">
+          <p class="eyebrow-label eyebrow-label--danger text-center">Colapso Estratégico</p>
+          <h2 class="hero-title text-center" style="font-size:2rem;" id="gameover-country">—</h2>
+
+          <p class="hero-text text-center mt-lg" id="gameover-summary"></p>
+
+          <p class="subsection-title" style="font-size:1.05rem; text-align:center;">Fatores que levaram ao colapso</p>
+          <ul class="report-list" id="gameover-factors"></ul>
+
+          <p class="subsection-title" style="font-size:1.05rem; text-align:center;">Últimas decisões do governo</p>
+          <ul class="report-list" id="gameover-events"></ul>
+
+          <div class="result-actions mt-lg">
+            <button id="btn-restart-gameover" class="btn btn-primary">Jogar novamente</button>
+            <a href="../index.html" class="btn btn-ghost">Voltar ao portal</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="brand-mark">G</div>
+            <span>Geonexus</span>
+          </div>
+          <p class="lede">Pesquisa geopolítica institucional para as decisões que importam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="../analises.html">Análises</a></li>
+            <li><a href="../regioes.html">Regiões</a></li>
+            <li><a href="../tema.html">Temas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Interativo</h4>
+          <ul>
+            <li><a href="index.html">Global Crisis</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="../index.html#sobre">Sobre nós</a></li>
+            <li><a href="../index.html#newsletter">Briefing semanal</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Geonexus Research. Exclusivo para assinantes institucionais.</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
