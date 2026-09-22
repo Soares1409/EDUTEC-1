@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Geonexus — Inteligência Geopolítica para Empresas</title>
-  <meta name="description" content="Análises geopolíticas regionais, temas em foco, teorias clássicas, leituras recomendadas e um jogo de decisões para testar suas estratégias." />
+  <meta name="description" content="Análises geopolíticas regionais, temas em foco, teorias clássicas e um jogo de decisões para testar suas estratégias." />
   <link rel="icon" href="assets/imagensHome/hero-world.jpg" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -68,14 +68,10 @@
       <div id="destaques" class="grid grid-3"></div>
     </section>
 
-    <!-- Teorias / Leituras -->
+    <!-- Teorias -->
     <section id="teorias" class="section">
-      <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
-        <button id="tab-teorias" class="tab-btn is-active">Teorias Geopolíticas</button>
-        <button id="tab-leituras" class="tab-btn">Leituras Recomendadas</button>
-      </div>
+      <h2 class="section-title">Teorias Geopolíticas</h2>
       <div id="painel-teorias" class="grid grid-3 mt-lg"></div>
-      <div id="painel-leituras" class="grid grid-2 mt-lg" style="display:none;"></div>
     </section>
 
     <!-- Sobre nós -->
@@ -157,7 +153,6 @@
           <ul>
             <li><a href="jogo/index.html">Global Crisis</a></li>
             <li><a href="index.html#teorias">Teorias</a></li>
-            <li><a href="index.html#leituras">Leituras</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -187,28 +182,8 @@
     document.getElementById("destaques").innerHTML = destaques.map(articleCardHTML).join("");
 
     document.getElementById("painel-teorias").innerHTML = TEORIAS.map(pilarCardHTML).join("");
-    document.getElementById("painel-leituras").innerHTML = LEITURAS.map(readingCardHTML).join("");
 
     document.getElementById("equipe").innerHTML = EQUIPE.map(teamCardHTML).join("");
-
-    const tabTeorias = document.getElementById("tab-teorias");
-    const tabLeituras = document.getElementById("tab-leituras");
-    const painelTeorias = document.getElementById("painel-teorias");
-    const painelLeituras = document.getElementById("painel-leituras");
-
-    tabTeorias.addEventListener("click", () => {
-      tabTeorias.classList.add("is-active");
-      tabLeituras.classList.remove("is-active");
-      painelTeorias.style.display = "grid";
-      painelLeituras.style.display = "none";
-    });
-
-    tabLeituras.addEventListener("click", () => {
-      tabLeituras.classList.add("is-active");
-      tabTeorias.classList.remove("is-active");
-      painelLeituras.style.display = "grid";
-      painelTeorias.style.display = "none";
-    });
   </script>
 </body>
 </html>

@@ -76,21 +76,6 @@ function teamCardHTML(p) {
     </div>`;
 }
 
-function readingCardHTML(l) {
-  const avatarInner = l.icone
-    ? `<img src="${escapeHtml(l.icone)}" alt="" loading="lazy" />`
-    : escapeHtml(l.titulo.charAt(0));
-  return `
-    <div class="glass reading-card">
-      <div class="avatar${l.icone ? " avatar--icon" : ""}">${avatarInner}</div>
-      <div>
-        <p class="title">${escapeHtml(l.titulo)}</p>
-        <p class="author">${escapeHtml(l.autor)}</p>
-        <p class="note">${escapeHtml(l.nota)}</p>
-      </div>
-    </div>`;
-}
-
 function highlightCardHTML(d) {
   return `
     <div class="glass highlight-card">
